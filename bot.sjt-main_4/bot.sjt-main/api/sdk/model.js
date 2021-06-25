@@ -1,20 +1,22 @@
 const tf = require('@tensorflow/tfjs-node');
 
 function normalized(data){ // i & r
-    i = (data[0] - 12.585) / 6.813882
-    r = (data[1] - 51.4795) / 29.151289
-    return [i, r]
+    x = data[1] 
+    y = data[2] 
+    z = data[3]
+    return [x, y, z]
 }
 
 function denormalized(data){
-    v = (data[0] * 552.6264) + 650.4795
-    p = (data[1] * 12153.8) + 10620.5615
-    return [v, p]
+    m1 = data[1] 
+    m2 = data[2] 
+    m3 = data[3]
+    return [m1, m2, m3]
 }
 
 
 async function predict(data){
-    let in_dim = 2;
+    let in_dim = 3;
     
     data = normalized(data);
     shape = [1, in_dim];
