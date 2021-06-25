@@ -6,7 +6,7 @@ const model = require('./sdk/model.js'); //predict
 
 // Bot Setting
 const TelegramBot = require('node-telegram-bot-api');
-const token = '1824987812:AAHmxIgQXFndyzy4g5oA0v1R_fEbZAIxZw0'
+const token = '1709356542:AAGaM9KhpruujMT5PlxieIRC-vMheZAH9Og'
 const bot = new TelegramBot(token, {polling: true});
 
 
@@ -36,7 +36,7 @@ bot.on('message',(msg) => {
         s =msg.text.split("|");
         x = s[1]
         y = s[2]
-		z = s[3]
+	z = s[3]
 	model.predict(
 	   [
              parseFloat(s[1]), // string to float
